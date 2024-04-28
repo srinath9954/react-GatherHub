@@ -22,12 +22,16 @@ function App() {
     (async () => await getItem())();
   }, []);
 
-  const user = {
+  const [user, setUser] = useState({
     name: 'SRINATH',
     email: 'srinath9954@gmail.com',
     bio: 'Computer Science Engineer'
+  });
+  const profilechange = async (name, email, bio) => {
+    const newuser={name:name, email:email, bio:bio};
+    setUser(newuser);
+
   };
-  
   const handleCreateEvent = (eventData) => {
     // Handle event creation (e.g., send data to backend)
     console.log('Event created:', eventData);
@@ -77,7 +81,7 @@ function App() {
     
     // Call callback function to create event
     console.log('Submitting form:', { title, date, location });
-    const newEvent = { id: events.length + 1, title: title, date: date, location: location,attendees:[user.name]};
+    const newEvent = { id: events.length + 1, title: title, date: date, location: location,attendees:[user.name] };
     setEvents([...events, newEvent]);
     // Clear form fields (if needed)
     const postoption = {
@@ -96,7 +100,8 @@ function App() {
       <h1>GatherHub</h1>
       <div className="container">
         <div className="left-panel">
-          <UserProfile user={user} />
+          <UserProfile user={user} 
+          profilechange={profilechange}/>
           <EventForm onCreateEvent={handleCreateEvent} handleSubmit={handleSubmit} />
         </div>
         <div className="right-panel">

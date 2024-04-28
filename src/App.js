@@ -6,7 +6,7 @@ import UserProfile from './UserProfile';
 
 function App() {
   const [events, setEvents] = useState([]);
-  const API_URL = 'http://localhost:3003/events';
+  const API_URL = 'https://eventjson.onrender.com/events';
 
   useEffect(() => {
     const getItem = async () => {

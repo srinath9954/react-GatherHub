@@ -1,0 +1,37 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Birthday Party",
+      "date": "2024-05-01",
+      "location": "My House",
+      "attendees": [
+        "SRINATH",
+        "SRINATH"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Picnic in the Park",
+      "date": "2024-05-05",
+      "location": "Central Park",
+      "attendees": [
+        "SRINATH"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Movie Night",
+      "date": "2024-05-10",
+      "location": "Cinema 1",
+      "attendees": []
+    },
+    {
+      "id": "4",
+      "title": "Exam",
+      "date": "2024-05-07",
+      "location": "Vellore",
+      "attendees": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+/* src/components/UserProfile.css */
+
+.user-profile {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .edit-button {
+    margin-top: 10px;
+  }
+  

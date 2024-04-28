@@ -77,7 +77,7 @@ function App() {
     
     // Call callback function to create event
     console.log('Submitting form:', { title, date, location });
-    const newEvent = { id: events.length + 1, title: title, date: date, location: location,attendees:user.name };
+    const newEvent = { id: events.length + 1, title: title, date: date, location: location,attendees:[user.name]};
     setEvents([...events, newEvent]);
     // Clear form fields (if needed)
     const postoption = {
@@ -88,7 +88,7 @@ function App() {
       body: JSON.stringify(newEvent)
     };
 
-    const result = await fetch(API_URL, postoption);
+    await fetch(API_URL, postoption);
   };
 
   return (

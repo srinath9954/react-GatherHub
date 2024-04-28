@@ -43,9 +43,13 @@ function App() {
         console.error('Event not found');
         return;
       }
+      if(updatedEvent.attendees.includes(user.name)){
+        alert(`${user.name} is already registered for this event.`);
+      }
+      else{
       
-      updatedEvent.attendees.push(user.name); // Add user's name to attendees list
-  
+      updatedEvent.attendees.push(user.name);
+      }
       const patchOption = {
         method: 'PATCH',
         headers: {

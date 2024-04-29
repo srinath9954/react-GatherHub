@@ -251,7 +251,7 @@ export default App;
 
   return (
     <div className="App">
-      <h1>GatherHub</h1>
+      <h1>GatherHub.</h1>
       <div className="container">
         <div className="left-panel">
           <UserProfile user={user} 

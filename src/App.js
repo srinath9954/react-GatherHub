@@ -9,17 +9,25 @@ function App() {
   const API_URL = 'https://eventjson.onrender.com/events';
 
   useEffect(() => {
-    const getItem = async () => {
+    const fetchData = async () => {
       try {
         const response = await fetch(API_URL);
-        const newItem = await response.json();
-        setEvents(newItem);
-      } catch (e) {
-        console.log("error");
+        const data = await response.json();
+  
+        // Filter events
+        const filteredEvents = data.filter(event => {
+          const eventDate = new Date(event.date);
+          const currentDate = new Date();
+          return eventDate > currentDate;
+        });
+  
+        setEvents(filteredEvents);
+      } catch (error) {
+        console.error('Error fetching data:', error);
       }
     };
-
-    (async () => await getItem())();
+  
+    fetchData();
   }, []);
 
   const [user, setUser] = useState({
